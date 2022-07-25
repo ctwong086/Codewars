@@ -12,6 +12,7 @@ function cakes(recipe, available) {
     }
     return Math.min(...result);
 }
+
 //Attempt#2
 function cakes(recipe, available) {
     return Math.min(...Object.keys(recipe).map(e => {
