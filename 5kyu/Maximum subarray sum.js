@@ -1,3 +1,5 @@
+//https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
+
 // all pos => sum of arr
 // all neg => 0
 // empty => 0

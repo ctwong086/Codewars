@@ -1,3 +1,5 @@
+//https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39
+
 //Attempt#1
 function zero(func) {return func ? func(0) : 0};
 function one(func) {return func ? func(1) : 1};

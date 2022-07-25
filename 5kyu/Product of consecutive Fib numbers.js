@@ -1,3 +1,5 @@
+//https://www.codewars.com/kata/5541f58a944b85ce6d00006a
+
 //Attempt#1
 function productFib(prod) {
     let fibNum = [0, 1];
