@@ -2,22 +2,33 @@
 
 //Attempt#1
 function doneOrNot(board) {
+    //declaration
+    let blocks = [];
     let columns = [];
-    let regions = [];
   
-    for(let row = 0; row < board.length; row++) {
-        columns[row] = [];
-        for(let col = 0; col < board.length; col++) {
-            let pos = Math.floor(row / 3) + Math.floor(col / 3) * 3;
-            regions[pos] = regions[pos] || [];
-            
-            regions[pos].push(board[row][col]);
-            columns[row].push(board[col][row]);
+    //mutute board to blocks/columns
+    for(let i = 0; i < board.length; i++) {
+        //init if not exist
+        columns[i] = [];
+        for(let j = 0; j < board.length; j++) {
+            //cal which index to push
+            let pos = Math.floor(i / 3) * 3 + Math.floor(j / 3);
+            //init if not exist
+            blocks[pos] = blocks[pos] || [];  
+          
+            blocks[pos].push(board[i][j]);
+            columns[i].push(board[j][i]);
         }
     }
-    let isValidRow = function(row) {
-        return row.reduce((acc, cur) => acc + cur) === 45;
+    
+    //test if every row is valid
+    let isValidRow = function(arr) {
+        return (arr.reduce((acc, cur) => acc + cur) === 45 && arr.every(e => arr.indexOf(e) === arr.lastIndexOf(e)));
     }
-    let isValidBoard = board.every(isValidRow) && columns.every(isValidRow) && regions.every(isValidRow);
-    return isValidBoard ? 'Finished!' : 'Try again!';
+    //test if blocks/columns/board is valid
+    let isValid = board.every(isValidRow) &&
+                  columns.every(isValidRow) &&
+                  blocks.every(isValidRow);
+    
+    return isValid ? "Finished!" : "Try again!";
 }

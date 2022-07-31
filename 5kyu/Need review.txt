@@ -1,0 +1,8 @@
+Best travel.js
+Calculating with Function.js
+Did I Finish my Sudoku?.js
+
+**Memoized Fibonacci.js
+**A Chain adding function.js    Currying
+    (https://javascript.info/currying-partials)
+    (https://github.com/dstn3422/dstn3422.github.io)

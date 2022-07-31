@@ -8,3 +8,15 @@ function domainName(url) {
     url = url.slice(first[0].length);
     return url.split('.')[0];
 }
+
+//Attempt#2
+function domainName(url) {
+    return url.slice(url.match(/^(http(s?):\/\/)?(www\.)?/gi)[0].length).split('.')[0];
+}
+
+//Attempt#3
+function domainName(url) {
+    url = url.replace(/http(s?):\/\//, '');
+    url = url.replace(/www./, '');
+    return url.split('.')[0];
+}

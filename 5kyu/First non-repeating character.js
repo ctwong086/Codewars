@@ -29,6 +29,8 @@ function firstNonRepeatingLetter(s) {
 }
 
 //Attempt#3
-function firstNonRepeatingLetter(str){
-    return str.split('').find(e => str.match(new RegExp(`${e}`, 'gi')).length === 1) || '';
+function firstNonRepeatingLetter(s) {
+    return s.split('').find(e => {
+        return s.match(new RegExp(`${e}`, 'gi')).length === 1;
+    }) || '';
 }
