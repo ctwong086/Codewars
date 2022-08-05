@@ -1,1 +1,1 @@
-Code practice from Codewars
+Javascript Code practice from Codewars
