@@ -3,12 +3,10 @@
 //Attempt#1
 function matrixMultiplication(a, b) {
     let len = a.length;
-    let res = new Array(len);
-  
+    let res = new Array(len).fill(0).map(e => new Array(len).fill(0));
+    
     for(let i = 0; i < len; i++) {
-        res[i] = new Array(len);
         for(let j = 0; j < len; j++) {
-            res[i][j] = 0;
             for(let x = 0; x < len; x++) {
                 res[i][j] += a[i][x] * b[x][j];
             }
