@@ -1,6 +1,6 @@
 //https://www.codewars.com/kata/57feb00f08d102352400026e
 
-//Attempt#1
+//Attempt#1 Wrong approach
 let flapDisplay = function(lines, rotors) {
     const order = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ?!@#&()|<>.:=-+*/0123456789'; //54
   
@@ -23,4 +23,15 @@ let flapDisplay = function(lines, rotors) {
         }
     }    
     return lines;
+}
+
+//Attempt#2
+let flapDisplay = function(lines, rotors) {
+    return lines.map((word, i) => {
+        let temp = 0;
+        return word.split('').map((e, j) => {
+            temp += rotors[i][j];
+            return ALPHABET[((ALPHABET.indexOf(e) + temp) % 54)];
+        }).join('');
+    })
 }
